@@ -30,7 +30,7 @@ jobs:
           
         # Generate html from all md files
       - name: Export markdown to html
-        run: claat export ../codelabs/*md -f offline
+        run: claat export ../codelabs/*md
       # - name: Deploy to GitHub Pages
       #   id: deployment
       #   uses: actions/deploy-pages@main
