@@ -13,10 +13,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: 'google-github-actions/auth@v2'
+      with:
+        project_id: 'my-project'
+        workload_identity_provider: 'projects/123456789/locations/global/workloadIdentityPools/my-pool/providers/my-provider'
       - name: Configure Git Credentials
         run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
       - uses: actions/setup-go@v4
         with:
           go-version: 1.19
@@ -31,6 +38,3 @@ jobs:
       # Generate html from all md files
       - name: Export markdown to html
         run: claat export ../codelabs/*md
-      # - name: Deploy to GitHub Pages
-      #   id: deployment
-      #   uses: actions/deploy-pages@main
