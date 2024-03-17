@@ -1,19 +1,15 @@
-# Simple workflow for deploying static content to GitHub Pages
 name: Deploy static content to Pages
 on:
-  # Runs on pushes targeting the default branch
   push:
     branches:
       - main
 permissions:
   contents: write
 jobs:
-  # Single deploy job since we're just deploying
   deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: 'google-github-actions/auth@v2'
       - name: Configure Git Credentials
         run: |
           git config user.name github-actions[bot]
@@ -26,12 +22,9 @@ jobs:
           go-version: '1.21.x'
       - name: install claat tool
         run: go install github.com/googlecodelabs/tools/claat@latest
-
       - name: Change to docs directory
         run: |
           mkdir $GITHUB_WORKSPACE/docs
           cd $GITHUB_WORKSPACE/docs
-          
-      # Generate html from all md files
       - name: Export markdown to html
         run: claat export ../codelabs/*md
