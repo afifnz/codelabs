@@ -1,12 +1,12 @@
-summary: Codelab Formatting Guide
-id: codelab-formatting-guide
-categories: Sample
-tags: medium
+summary: Pengantar Pemrograman mobile
+id: 01-pengenalan
+categories: Pemrograman Mobile
+tags: Pemrograman Mobile
 status: Published 
-authors: Janardhan
+authors: Achmad Afiffudin Nurzein
 
 
-# Codelab Formatting Guide
+# Pengantar Pemrograman Mobile (Flutter)
 
 Bug or feature request? File it [here](https://github.com/googlecodelabs/tools/issues).
 
