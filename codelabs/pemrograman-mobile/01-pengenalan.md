@@ -6,202 +6,112 @@ status: Published
 authors: Achmad Afiffudin Nurzein
 
 
-# Pengantar Pemrograman Mobile (Flutter)
+## Pengantar Pemrograman Mobile (Flutter)
+Duration: 10 menit
+![Image Ilustration](images/01-ilustrasi.png)
+**Sumber**: [https://flutter.dev/](https://flutter.dev/), **Terakhir diperbarui**: 18 Maret 2024
 
-Bug or feature request? File it [here](https://github.com/googlecodelabs/tools/issues).
+### Apa itu framework ?
 
-## Getting Started
+Framework secara bahasa dalam kamus Oxford memiliki beberapa pengertian, yaitu:
 
-Copy [this template doc](https://docs.google.com/document/d/1E6XMcdTexh5O8JwGy42SY3Ehzi8gOfUGiqTiUX6N04o/edit) as a starting point and then iteratively mutate the metadata and contents to your liking, following the formatting rules described below.
+[1] _the parts of a building or an object that support its weight and give it shape._
 
-To preview a codelab:
+[2] _a set of beliefs, ideas or rules that is used as the basis for making judgements, decisions, etc._
 
--  (optional one-time setup) Install the [Preview Codelab Chrome extension](https://chrome.google.com/webstore/detail/preview-codelab/lhojjnijnkiglhkggagbapfonpdlinji) in your browser.
+Dari pengertian nomor satu menjelaskan bahwa framework adalah bagian dari sebuah bangunan atau sebuah objek yang mendukung bobot dan memberikan suatu bentuk. Pengertian dari nomor dua menjelaskan bahwa framework adalah seperangkat panutan, ide atau aturan-aturan yang digunakan sebagai dasar untuk membuat hukum, keputusan, dsb.
 
-- Click the Chrome extension's button while you're in your codelab Google Doc tab, or
-- Navigate manually to **https://codelabs-preview.appspot.com/?file_id=[google-doc-id]**.
+Framework (kerangka kerja) adalah sebuah kerangka program yang digunakan untuk membantu developer dalam mengembangkan kode secara konsisten. Adanya framework developer bisa mengurangi jumlah bug pada aplikasi yang dibuat. Karena, fungsi dan variabel yang sudah tersedia di dalam komponen framework tersebut.
 
-## Formatting Reference
+Sebelum belajar lebih jauh tentang framework, ada baiknya jika Anda memahami pengertian framework terlebih dahulu. Sesuai dengan namanya, framework adalah kerangka kerja yang digunakan untuk mengembangkan aplikasi berbasis desktop atau aplikasi berbasis website.
 
-1. Table of Contents
+Framework sengaja diciptakan untuk membantu developer mengembangkan aplikasi lebih cepat serta tersusun dan terstruktur. Dengan menggunakan framework Anda akan lebih mudah untuk membuat aplikasi, karena Anda hanya perlu menyusun komponen-komponen pemrograman yang sudah jadi. Sehingga developer dan programmer tidak perlu melakukan koding program yang diulang-ulang.
 
-    Every codelab document must use the **Heading 1** paragraph style to delineate the steps of the codelab. In turn, these headings will be used to automatically create a Table of Contents which shows the student exactly where they are in the codelab and lets them jump to any step.
+### Apa yang Anda akan pelajari
+Di codelab ini Anda akan mempelajari tentang:
 
-    The table of contents disappears for smaller browsers but is still available from the hamburger menu.
+- Pengantar Pemrograman Mobile (Flutter).
+- Instalasi dan konfigurasi perangkat lunak untuk pengembangan.
+- Pemrograman dasar Dart
 
-1. Codelab Metadata (Google Docs)
+> aside positive
+> Catatan: Git adalah salah satu sistem pengontrol versi (Version Control System) pada proyek perangkat lunak yang diciptakan oleh Linus Torvalds. Pengontrol versi bertugas mencatat setiap perubahan pada file proyek yang dikerjakan oleh banyak orang maupun sendiri. Git dikenal juga dengan distributed revision control (VCS terdistribusi), artinya penyimpanan database Git tidak hanya berada dalam satu tempat saja.
 
-    There is some additional metadata that is required in order to properly publish a codelab. This metadata should be added as a **two-column table** anywhere before the first step of the codelab. For example:
+### Apa yang Anda perlu persiapkan
+- PC atau Laptop dengan spesifikasi minimum RAM 4GB Processor Core i3
+- Koneksi internet
+- Chrome Browser
+- Android Device atau iOS iPhone
 
+### Pengetahuan yang Anda harus dimiliki
+- Pemrograman Dasar
+- Standar instalasi dan konfigurasi perangkat lunak seperti Git, Visual Studio Code (VS Code), dan Android SDK
 
+## Pengenalan Flutter
 
-    You are free to add your own metadata here if you'd like but certain key/value pairs are reserved for specific codelab publishing features. The current list of reserved metadata terms are:
+### Apa itu Flutter?
+Flutter adalah sebuah framework open source yang dibuat oleh Google. Google membuat flutter dengan tujuan membangun sebuah framework untuk membuat UI yang modern, native dan reactive yang dapat berjalan di sistem operasi iOS maupun Android. Tidak hanya pada smartphone google juga membuat flutter untuk desktop, web dan embedded device.
 
-    * **Summary:** A short summary of the codelab that will be shown in the codelab browser UI.
-    * **URL:** The URL suffix where this codelab will be published, i.e. the path after the root URL to a collection of codelabs. For example, the Google Codelabs site uses codelabs.developers.google.com/codelabs/ as root and this value is appended to that base to form the unique URL for a given codelab.
-    * **Category:** A single, top-level category that will be used to group codelabs by platform. Categories are normally curated by an organization (e.g. we have a set we use for the Google Codelabs site) but each publisher is free to use this value at their discretion.
-    * **Environment**: A tag that allows use to output some codelabs for a specific environment. All codelabs default to the "Web" environment but given some hardware constraints we might only want to generate them for a "Kiosk" environment where we know people will have the right hardware. \
-You can also use this to target specific events, for instance:  \
-"Web, polymer-summit" (without quotes)
-    * **Status:** One or more of (Draft, Published, Deprecated, Hidden) to indicate the progress and whether the codelab is ready to be published. 'Hidden' implies the codelab is for restricted use, should be available only by direct URL, and should not appear on the main index page.
-    * **Feedback Link:** The URL that the student should be sent to when they click on the feedback link to report a bug in the codelab.
-    * **Analytics Account:** This allows you to specify a custom Google Analytics ID for your codelab. If no ID is specified, it defaults to a global codelabs analytics account.
+Flutter diprogram dengan menggunakan bahasa Dart sebuah bahasa modern yang dapat dicompile ke arsitektur processor ARM atau javascript. Flutter menggunakan Skia 2D rendering engine yang dapat bekerja pada hardware atau software yang berbeda platform.
 
-1. Codelab Metadata (Markdown)
+Dart menggunakan metode compilasi ahead of time (AOT) untuk mengubah kode Dart menjadi kode native untuk sistem operasi yang digunakan, oleh karena itu aplikasi yang dibangun menggunakan flutter memiliki kecepatan yang hampir sama dengan aplikasi native. Dart juga menggunakan konsep just-in-time (JIT) sehingga memungkinkan programmer dapat membuat perubahan pada kode program dan langsung melihat hasilnya melalui fitur hot reaload yang dimiliki Flutter.
 
-    You are free to add your own metadata here if you'd like but certain key/value pairs are reserved for specific codelab publishing features. The current list of reserved metadata terms are:
+Flutter menggunakan Dart untuk membuat User Interface, sehingga memudahkan dalam membuat aplikasi karena menggunakan satu bahasa (Dart) dalam pembuatan UI maupun logika program. Flutter menggunakan pendekatan declarative dimana Flutter membangun UI mengikuti "State" yang dimiliki oleh aplikasi. Ketika state berubah maka UI akan digambar ulang.
 
-    * **summary:** A short summary of the codelab that will be shown in the codelab browser UI.
-    * **id:** The name of the folder that will be generated once you export the markdown file via claat.
-    * **categories:** A single, top-level category that will be used to group codelabs by platform. Categories are normally curated by an organization (e.g. we have a set we use for the Google Codelabs site) but each publisher is free to use this value at their discretion.
-    * **environments**: A tag that allows use to output some codelabs for a specific environment. All codelabs default to the "Web" environment but given some hardware constraints we might only want to generate them for a "Kiosk" environment where we know people will have the right hardware. \
-You can also use this to target specific events, for instance:  \
-"Web, polymer-summit" (without quotes)
-    * **status:** One or more of (Draft, Published, Deprecated, Hidden) to indicate the progress and whether the codelab is ready to be published. 'Hidden' implies the codelab is for restricted use, should be available only by direct URL, and should not appear on the main index page.
-    * **feedback link:** The URL that the student should be sent to when they click on the feedback link to report a bug in the codelab.
-    * **analytics account:** This allows you to specify a custom Google Analytics ID for your codelab. If no ID is specified, it defaults to a global codelabs analytics account.
-    * **tags:** Add relevant tags to make your codelab easily found.
-    * **authors:** Indicate the author(s) of this specific codelab.
+Flutter juga memudahkan programmer karena dari satu kode program dapat dikompilasi ke kode native ARM, menggunakan GPU dan mengakses fitur spesifik dari smartphone baik yang menggunakan sistem operasi iOS ataupun yang menggunakan sistem operasi Android. Jadi dengan satu kali membuat program dapat membuat 2 aplikasi yang sama untuk sistem operasi yang berbeda (iOS atau Android).
 
-1. Headers
+### Widget dan Element pada Flutter
+Gaya pengembangan aplikasi menggunakan flutter sedikit berbeda dengan gaya pengembangan aplikasi pada umumnya, di mana UI pada flutter dibuat menggunakan Widget. Widget adalah sebuah konsep dimana UI dapat dianggap sebagai sebuah balok LEGO, sebuah bentuk baru dapat disusun dari beberapa balok dan masing masing kumpulan balok dapat dikombinasikan dengan kumpulan balok lain sehingga membentuk sebuah bentuk baru yang lebih kompleks. Flutter menggunakan widget ini sebagai balok dasar pembangunan aplikasi.
 
-    Within the steps of your codelab you should use the **Heading 2**, **Heading 3** and **Heading 4** paragraph styles to organize your content. These will get translated to `<h2>`, `<h3>` and `<h4>` tags in the codelab markup.
+Widget dapat disusun dan dikombinasikan dalam satu layar, sama halnya dengan xml pada pemrograman android native, widget dapat disusun dalam bentuk tree dimana satu widget menjadi parent dan widget lain menjadi child. Masing masing widget dapat diberikan konfigurasi sesuai dengan kebutuhan aplikasi.
 
-    Also, if you wish to include some additional administrative information at the beginning of your codelab you can freely use the **Heading 2**, **Heading 3** and **Heading 4** paragraph styles and they will not show up in the codelab as long as they appear before the first **Heading 1**.
+Flutter memiliki dua jenis widget yaitu `StatelessWidget` dan `StatefullWidget`. Stateless widget digunakan ketika value (state / konfigurasi) dari widget tersebut tidak pernah berubah, dan `StatefullWidget` digunakan ketika value (state / konfigurasi) dari widget dapat berubah. Baik `StatelessWidget` maupun `StatefullWidget` sama sama memiliki sebuah method bernama "build" yang memiliki BuildContext untuk mengatur posisi widget di dalam widget tree detail mengenai widget dan bagaimana membuatnya akan dibahas pada bab selanjutnya.
 
-1. Text Styles
+## Menyiapkan Git
 
-    For the most part, it doesn't matter which fonts you use in your Google Doc draft; everything will be formatted using Roboto in the final codelab.
+### Instalasi Git
+Jika Git belum terpasang pada komputer Anda, silakan unduh di web resminya: https://git-scm.com/ kemudian lakukan instalasi seperti biasa sesuai langkah-langkah pada proses install aplikasi.
 
-    There are some simple ways that you can add emphasis to certain parts of the text. Bolded and italicized text will be passed through to the codelab markup as `<strong>` and `<em>` tags respectively. Also, passages of text formatted with the `Courier New` font will be passed through as an inline `<code>` tag in the markup.
+> aside positive
+> Catatan: Untuk memahami lebih baik tentang Git, Anda dapat mempelajarinya di tautan ini: https://www.petanikode.com/git-untuk-pemula/
 
-1. Responsive Images
+### Verifikasi Hasil Instalasi Git
+Jika telah berhasil melakukan install Git, silakan verifikasi dengan membuka Command Prompt (CMD) atau Git Bash atau Terminal sesuai dengan sistem operasi Anda. Lalu ketikkan perintah berikut:
 
-    Inline images in your codelab should just work seamlessly. You can re-size them in your codelab document and that width will be applied as a **max-width** on the image in the codelab markup so that images are the same size relative to the text but also scale down appropriately for smaller browsers.
+```bash
+git --version
+```
 
-1. Youtube Videos
+> aside negative
+> Perhatian: Pastikan versi Git telah tampil, jika tidak tampil maka perlu dicek variabel environment pada sistem operasi Anda.
 
-    Youtube Videos can be embedded by doing:
-     - Add an image in the document. The image can be a screenshot of the video for instance but it doesn't really matter since it won't be displayed but replaced by the embedded video.
-     - Add an "Alt Text" to the image by doing **Cmd+Opt+Y** or **Right click > "Alt Text..."**
-     - Put a Youtube video link in the **Description** field of the Alt Text. in the format `https://www.youtube.com/watch?v=[video_ID]`
-    > Specifying a start time is not supported at this time.
+### Konfigurasi Akun Git di Sistem Operasi
+Jika telah berhasil melakukan instalasi Git, maka perlu diset akun secara global untuk mengidentifikasi bahwa akun yang ingin digunakan adalah milik Anda. Lakukan perintah berikut pada CMD, Git Bash atau Terminal.
 
-1. Embedded Iframes
+1. Ketik perintah `git config --global user.name "username Anda"` untuk menset username Anda secara global pada sistem.
+2. Lalu perintah `git config --global user.email "email@email.com"` isi sesuai email yang Anda gunakan di akun GitHub.
 
-    Iframes can be embedded by doing:
-     - Add an image in the document. The image can be a screenshot of the iframe for instance but it doesn't really matter since it won't be displayed but replaced by the embedded iframe.
-     - Add an "Alt Text" to the image by doing **Cmd+Opt+Y** or **Right click > "Alt Text..."**
-     - Put a full URL in the **Description** field of the Alt Text. in the format `https://www.domain.com/watch?foo=bar`. Note that for security reasons, iframe embbedding is limited to an enumerated set of allowable iframe source URLs. Feel free to submit a PR if you'd like to augment that list or tweak your own version of the claat command.
+> aside positive
+> Catatan: Jika Anda hanya ingin menset username dan email secara lokal, maka dapat menghapus sintaks --global. Perintah lainnya tetap sama. Namun harus dilakukan pada folder root repository Anda.
 
-1. Info Boxes
+## Instalasi Visual Studio Code (VS Code) dan Flutter Extention
 
-    For additional information that you would like to specially call-out in your codelab, there are two styles of info boxes:
+1. Untuk install VS Code dapat unduh pada link berikut: [https://code.visualstudio.com/](https://code.visualstudio.com/)
+2. Silakan lakukan instalasi seperti biasa.
+3. Untuk memasang Flutter Extension, perhatikan gambar berikut:
+![image vscode](images/01-vscode.png)
+4. Pada kolom pencarian plugin, ketik flutter lalu pilih install pada bagian deskripsi plugin.
 
-    1. Positive information like best practices and time saving tips should be formatted as a **single-cell table** with a **light green 3** background.
-
-    2. Negative information like warnings and API usage restrictions should be formatted as a **single-cell table** with a **light orange 3** background.
-
-    It is recommended that you keep your infoboxes clean, concise and focused on a single topic. If you have information which may be useful to know but is not a critical part of the codelab instructions, then you should link to that information from the FAQ section rather than including it as an infobox.
-
-1. Command-line Snippets
-
-    It's often the case that you will have command-line instructions or log messages which are formatted with a monospaced font and have pre-defined whitespace. You can add these sections to your codelab by creating a **single-cell table** and making sure that all the text is formatted using the **Consolas font**.
-
-1. Code Snippets
-
-    Code snippets with syntax highlighting can be added by creating a **single-cell table** and making sure that all the text is formatted using the **`Courier New`** font.
-
-    Any additional styles applied to the code will be overridden by the syntax highlighting. This means that you're free to use code highlighting Add-ons in your codelab doc but it will have no effect on how the code is highlighted in the final codelab.
-
-    It is also strongly recommended that you provide a **Heading 3** header directly above your code snippet with the file name. This helps students keep track of where the code is coming from. The codelab framework also uses the file extension of the prior header as a clue for how to highlight the code.
-
-    It is also strongly recommended that you make your **Heading 3** header a hyperlink to the actual file if it is available on GitHub. A GitHub icon will automatically be added to the heading in such cases.
-
-1. Frequently Asked Questions
-
-    As the author of the codelab, you have developed and tested your code. You've probably run into all sorts of common issues or misconceptions. By linking to frequently asked questions, after each step where they often occur, you will reassure the students that they have everything they need to complete the codelab and avoid having to explain everything inline in your codelab.
-    FAQs are easy to add. All the author needs to do is provide an unordered list of hyperlinks and preface it with a **Heading 3** header with the exact text: **Frequently Asked Questions**.
-
-    Link icons will be added automatically for stackoverflow.com, developers.google.com, developers.android.com and support.google.com. All links will be configured to open in a new tab.
-
-1. Download Buttons
-
-    You can make it really easy to get started by including direct download buttons inline in your codelab. In order to add a button to your codelab, simply add a hyperlink and make sure that it is highlighted with a **dark green 1** background.
-
-    Additionally, if the link text begins with the word "Download", a file download icon will be added to the button.
-
-1. Per-step Time Estimates
-
-    Many participants are not fully committed to completing a codelab when they start it. One of the ways that we can keep them in our codelab is by giving them accurate estimates about how much additional effort is required to complete the codelab at each step.
-
-    In order to add this feature to your codelab, simply annotate each step in your codelab doc with a Duration: which uses **dark grey 1** text.
-
-    That's it. The codelab framework will do everything else for you. If you forget to annotate a step with a duration, the default is 1:00. Also, if the last step of your codelab is just a congratulations page, you should set the duration of that step to **0**.
-
-1. Conditional Steps
-
-    Sometimes it's useful to have different versions of a codelab for different environments. For example, you might have some steps that only apply to students who take the codelab in a classroom setting while other steps only apply to people who are following the instructions at their own pace online.
-
-    The format is similar to the duration metadata. You simply specify one or more environments with an Environment: which uses **dark grey 1** text. The Duration and/or Environment fields, when present, should be followed by a blank line and should be set in normal text (not in Heading 1, lest they be considered part of the step title).
-
-    If no environment metadata is specified, the default environment is "Web, Kiosk".
-
-    When previewing your codelab, you can change environments using the &env=web or &env=kiosk parameters.
-
-1. Fragment imports
-
-    It is possible for a codelab to import another doc as a step fragment. For instance, it could be a set of setup instructions shared among multiple codelabs:
-
-    [[**import** [funny dog](https://docs.google.com/document/d/1VkJopEKiqitwFgqFOEU6rpB1VE-R-uYWq4erNHP2TQ4/edit)]]
-
-    The contents of the funny dog document will be inserted in the codelab, replacing import instruction.
-
-    The instruction syntax is:
-
-    *   start with [[ (two square brackets)
-    *   followed by **import** keyword in bold
-    *   followed by a link to a doc
-    *   end with ]] (two square brackets)
-
-    Caveat: The imported doc is limited to content within a step (hence the term "fragment"). Including multiple steps, or even the step title/heading, within the imported doc is not supported.
-
-1. Resumable Codelabs
-
-    When a user returns to a codelab, they may be returning via a bookmark or a short-link posted online, it usually takes them to the first page of the codelab. In that case, the codelab remembers where they left off and asks them if they wish to resume where they left off. This makes it easier for the user to jump back in and gives us more accurate analytics about how long users spend on each step.
-
-    This is simply part of the framework. There is nothing that you need to do as a codelab author to enable this feature.
-
-1. Feedback Links
-
-    At the bottom of every step of the codelab there is a link for reporting bugs. This link can be configured using the **Feedback Link** setting in your metadata table.
-
-1. Inline Surveys
-
-    **NOTE: Surveys cannot be used to collect data that can individually, or in conjunction with other information from this site, help locate and identify a particular user or reveal their sensitive demographics information. Any data collected should be sufficiently anonymized and aggregated. Also, consider that the surveys can possibly send a numerical ID of the selections instead of the actual value itself. Apart from helping on the localization front, this can also help prevent from injecting obvious PII values into GA.**
-
-    As we've seen in previous years, participants consume our codelabs for a wide range of reasons. In order to give us some more insight into how different people consume codelabs, we can ask them some quick multiple choice questions in the early stages of our codelab.
-
-    You can configure these short survey questions to ask whatever you think is relevant to your codelab. In order to include a survey question in your codelab, add a single-cell table with a **light blue 3** background. Format your question with the **Heading 4** paragraph style and provide an **unordered list** of choices.
-
-    The participants' answers will automatically be added as custom variables in Google Analytics which can help you understand things like:
-
-    *   _What is the difference in completion rate between novices and experts?_
-    *   _What is the average time spent for people who wanted to write code vs. people who just wanted to read?_
-    *   _Is the bounce rate affected by the students' preference in IDE?_
-
-    Of course, we need to be mindful of our participants' time and concentration and only ask a few key questions. It is _not_ recommended to have a survey after each step.
-
-1. What you'll learn
-
-    Having a header 2 of "What you'll learn" followed by a bullet point list creates a list of check marks.
-
-    A title of "What we've covered" has the same effect.
-    
-1. YouTube Video Embeds
-
-    Use a video tag like so `<video id="DWAinkJ54AP8"></video>` to embed a video uploaded to YouTube with the URL https://www.youtube.com/watch?v=DWAinkJ54AP8
-
-## Things to avoid
-
-- **Footers:** Any characters included in the footer (beyond the default page number) result in parsing bugs. For this reason, page footers are not recommended.
+## Instalasi Flutter SDK
+1. Download Flutter SDK, Silakan klik tautan berikut dan pilih sesuai dengan Sistem Operasi pada Laptop atau komputer Anda di [https://docs.flutter.dev/get-started/install](https://docs.flutter.dev/get-started/install)
+2. Extract file yang di download ke harddisk anda contoh lokasi ke `C:\src\flutter` ( JANGAN di install ke folder `C:\Program Files\` karena membutuhkan akses admin )
+3. (Cara lain untuk install Flutter) atau jika anda sudah menginstall git buatlah folder src di dalam drive C kemudian buka terminal di folder tersebut dan ketik
+```bash
+git clone https://github.com/flutter/flutter.git -b stable
+```
+4. Update Windows PATH tambahkan path menuju folder `C:\src\flutter\bin`
+![](images/01-windows-env.png)
+5. Pilih Variabel Path > Klik Button Edit
+![](images/01-windows-env-1.png)
+6. Pilih New > Paste alamat folder letak Flutter SDK Anda di-install.
+![](images/01-windows-env-2.png)
