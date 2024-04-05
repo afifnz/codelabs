@@ -1,4 +1,4 @@
-summary: Manajemen Plugin Pada Flutter
+summary: Manajemen Plugin di Flutter
 id: 09-manajemen-plugin
 categories: Pemrograman Mobile
 tags: Pemrograman Mobile
