@@ -1,0 +1,24 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2024-03-19T15:42:59+07:00",
+  "id": "09-postgresql",
+  "duration": 0,
+  "title": "",
+  "authors": "Achmad Afiffudin Nurzein",
+  "summary": "PostgreSQL",
+  "source": "../../codelabs/basis-data/09-postgresql.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "basisdata"
+  ],
+  "tags": [
+    "basisdata"
+  ],
+  "url": "09-postgresql"
+}
